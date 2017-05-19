@@ -7,6 +7,7 @@ import sys
 Interactive Fiction
 Diego Valle & Thomas Ortiz
 """
+# This is a prototype, the story is still pretty crappy...
 
 
 def story_mode():
@@ -15,19 +16,20 @@ def story_mode():
     print(" ")
     print("*TANK turns TV on*")
     print (" News Roprter: Hi Mike! So tell us... How is the project going along, you know... The... secret one. ")
-    print ("Mike Schwartzkanoff: Nice for you to ask of that, yes we've completed the suits to venture into that beastly forest, we may now figure out what is wrong with that cursed plot. It will only-")
+    print ("Mike Schwartzkanoff: Nice for you to ask of that, yes we've completed the suits to venture into that beastly and frost caped forest, we may now figure out what is wrong with that cursed plot. It will only-")
     print("*Your TV seemed to cut out...*")
     print (""" TANK: Man... I have to tell what just happened to BOMAR! We can finally steal the suits! We've planned this since we were ten and now is the perfect oppourtunity to stop that corrupted German company by findiny what they want with that forest. Especially for what they did to mom... """)
     KARMA = 0
     try:
         print("")
         decision_1 = input("Do you [call] BOMAR, or [run] to his house?: ")
-        if decision_1 == "call":
+        if decision_1.lower() == "call":
             KARMA += 1
             print ("You called BOMAR and told him what happened, he decided to come on over to your house to talk \'The Plan\' over.")
-        elif decision_1 == "run":
+        elif decision_1.lower() == "run":
             KARMA += 2
-            print ("You ran to BOMAR's house and discussed the report with him.")
+            print ("You ran to BOMAR's house and to discuss the report with him. When you get to BOMAR's house, you are greeted by his parents, which causes BOMAR to scream at them to leave them alone.")
+            print ("BOMAR: MOM! DAD! Stop it! You always do this when my friends come over!")
         else:
             print("You ruined the story, restart with one of two options.")
         print(""" You and BOMAR talked over the two plans you made.
@@ -35,55 +37,71 @@ def story_mode():
         #2/BOMAR, You go all out and destroy everything causing all chaos """)
         print("")
         decision_2 = input("Will you go with your\[TANK]\'s plan, or [BOMAR]\'s plan?: ")
-        if decision_2 == "BOMAR":
+        if decision_2.upper() == "BOMAR":
             print ("BOMAR and TANK infiltrate the facility and using sleep darts, sleep every single guard in sight.")
-        elif decision_2 == "TANK":
+            print ("BOMAR and TANK find themselves at a fork in the hallway.")
+            BOMAR_decision = input("Do you choose the [left] path or the [right] path?: ")
+            if BOMAR_decision.lower() == "left":
+                print ("TANK and BOMAR enter a room that contains E-DAY-GO, a guard that turned against the facility, and 4 suits. Continuing to the forest, TANK, BOMAR, and E-DAY-GO find a character that wants to help them discover the secret of the forest. When entering the forest, the character that is found has a suit malfunction and dies. BOMAR also has a suit malfunction, but E-DAY-GO gives up his suit to save him. While BOMAR is inspecting something, TANK wonders off and is never heard from again. BOMAR eventually finds out the secret of the forest, but then dies. GAME OVER!!!")
+                sys.exit(0)
+            elif BOMAR_decision.lower() == "right":
+                print ("TANK and BOMAR enter a room that contains SHARQUISHQWANIQWA, a guard that turned against the facility, and 4 suits. Continuing to the forest, TANK, BOMAR, and SHARQUISHQWANIQWA find a character that wants to help them discover the secret of the forest. When entering the forest, the character that is found has a suit malfunction and dies. BOMAR also has a suit malfunction, but SHARQUISHQWANIQWA gives up her suit to save him. While BOMAR is inspecting something, TANK wonders off and is never heard from again. BOMAR eventually finds out the secret of the forest, but then dies. GAME OVER!!!")
+                sys.exit(0)
+        elif decision_2.upper() == "TANK":
             print ("TANK hacks system, disabling everything and allowing you complete control of all electronics. You decide who goes in and takes the suits")
             print("")
             decision_3 = input("Will you/[TANK] go as offense, or go with [BOMAR] as offense?: ")
-            if decision_3 == "BOMAR":
+            if decision_3.upper() == "BOMAR":
                 print ("BOMAR and TANK find themselves at a fork in the hallway.")
                 BOMAR_decision = input("Do you choose the [left] path or the [right] path?: ")
-                if BOMAR_decision == "left":
+                if BOMAR_decision.lower() == "left":
                     print ("TANK and BOMAR enter a room that contains E-DAY-GO, a guard that turned against the facility, and 4 suits. Continuing to the forest, TANK, BOMAR, and E-DAY-GO find a character that wants to help them discover the secret of the forest. When entering the forest, the character that is found has a suit malfunction and dies. BOMAR also has a suit malfunction, but E-DAY-GO gives up his suit to save him. While BOMAR is inspecting something, TANK wonders off and is never heard from again. BOMAR eventually finds out the secret of the forest, but then dies. GAME OVER!!!")
-                elif BOMAR_decision == "right":
+                    sys.exit(0)
+                elif BOMAR_decision.lower() == "right":
                     print ("TANK and BOMAR enter a room that contains SHARQUISHQWANIQWA, a guard that turned against the facility, and 4 suits. Continuing to the forest, TANK, BOMAR, and SHARQUISHQWANIQWA find a character that wants to help them discover the secret of the forest. When entering the forest, the character that is found has a suit malfunction and dies. BOMAR also has a suit malfunction, but SHARQUISHQWANIQWA gives up her suit to save him. While BOMAR is inspecting something, TANK wonders off and is never heard from again. BOMAR eventually finds out the secret of the forest, but then dies. GAME OVER!!!")
-            elif decision_3 == "TANK":
+                    sys.exit(0)
+            elif decision_3.upper() == "TANK":
                 print(" ")
                 decision_4 = input("You see an [airshaft] and a [corridor], which do you follow?: ")
-                if decision_4 == "corridor":
+                if decision_4.lower() == "corridor":
                     print ("You went into the corrisor only to be flanked by guards from all sides... Only if BOMAR was on offense.")
                     sleep(1)
                     sys.exit(0)
-                elif decision_4 == "airshaft":
+                elif decision_4.lower() == "airshaft":
                     print ("You crawl into the room with the four suits and two rogue scientists, SHARQUISHQWANIQWA and E-DAY-GO.")
                     print ("They agree to take you to the forest to end this corrupt organization.")
                     print(" ")
+                    print("Sha-qwe-qwe and E-DAY-GO guide you to the edge of the forst. You can't help but notice on how the crisp autumn air seems to become bitter and cold, and yet it is comforting...")
+                    print("BOMAR: HEY! TANK, what are you doing, we kind of need you to put on your suit unless you're fine with dying in the cold.")
+                    talk_1 = input("What should I reply with?")
+                    print("%s" % talk_1)
+                    print("BOMAR: Ok.")
+                    print(" ")
                     decision_5 = input("They both lead you to the forest and you have to decide between going to the [mountain] to prepare, or rush to the [base] to end their experiments before they begin?: ")
-                    if decision_5 == "base":
+                    if decision_5.lower() == "base":
                         print("They lead you to the base and give you the proper equipment in order to make it through the base unscathed.")
                         print("You and BOMAR then are able to take pictures and steal survealance to expose the organization.")
                         sleep(1)
                         sys.exit(0)
-                    elif decision_5 == "mountain":
+                    elif decision_5.lower == "mountain":
                         print(" ")
                         decision_6 = input("You find two caves at the base of the mountain, will you go to the [left] or the [right] cave?: ")
-                        if decision_6 == "left":
+                        if decision_6.lower() == "left":
                             if KARMA == 1:
                                 print("SHARQUISHQWANIQWA is trailing along, when you hear a scream. You turn around only to find... Sorry, I can't say what occured, it simply isn't made for people with a soul to reatin their sanity anymore. Yet, you tread on.")
-                                print("E-DAY-GO leads you to the base and give you the proper equipment in order to make it through the base unscathed.")
+                                print("E-DAY-GO leads you to the base and gives you the proper equipment in order to make it through the base unscathed.")
                                 print("You and BOMAR then are able to take pictures and steal survealance to expose the organization.")
                                 sleep(1)
                                 sys.exit(0)
                             elif KARMA == 2:
                                 print("E-DAY-GO is trailing along, when you hear a scream. You turn around only to find... Sorry, I can't say what occured, it simply isn't made for people with a soul to reatin their sanity anymore. Yet, you tread on.")
-                                print("E-DAY-GO leads you to the base and give you the proper equipment in order to make it through the base unscathed.")
+                                print("E-DAY-GO leads you to the base and gives you the proper equipment in order to make it through the base unscathed.")
                                 print("You and BOMAR then are able to take pictures and steal survealance to expose the organization.")
                                 sleep(1)
                                 sys.exit(0)
-                        elif decision_6 == "right":
+                        elif decision_6.lower == "right":
                             print(" ")
-                            decision_7 = input("Find a cavern that looks as if it is ready to crumble with four items: Tablet of layout of secret base and history of Forest [1], suits that entirely camouflage you [2], a control panel of everything with electricity around a mile radius [3], or a device that controls microbots that infect and control its victims [4].")
+                            decision_7 = input("You find a cavern that looks as if it is ready to crumble with four items: Tablet of layout of secret base and history of Forest [1], suits that entirely camouflage you [2], a control panel of everything with electricity around a mile radius [3], or a device that controls microbots that infect and control its victims [4].")
                             if int(decision_7) == 1:
                                 print ("Using the tablet, SHARQUISHQWANIQWA and E-DAY-GO helped you expose the Organization, save the forest, and all of you disguised it so no one will ever try to harm it again.")
                                 sleep(1)
@@ -110,7 +128,7 @@ def story_mode():
             print("Try again with one of the provided options.")
         sys.exit(0)
     except TypeError:
-        print("Idk man")
+        print("Idek man, you need to retry... From the start.")
         sleep(1)
         sys.exit(0)
 
